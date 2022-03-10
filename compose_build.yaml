@@ -24,9 +24,6 @@ services:
           MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
         image: db
         networks:
-          - app-network
-          
-
-          
+          - app-network     
 networks:
     app-network:

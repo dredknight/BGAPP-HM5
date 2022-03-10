@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    web:
+        image: dredknight/M5web
+        ports:
+          - 80:80
+        volumes:
+          - "${PROJECT_ROOT}:/var/www/html:ro"
+        networks:
+          - app-network
+        depends_on:
+          - db
+    db:
+        image: dredknight/M5db
+        networks:
+          - app-network
+        environment:
+          MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+        networks:
+          - app-network     
+networks:
+    app-network:
