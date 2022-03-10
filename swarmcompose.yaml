@@ -25,6 +25,7 @@ services:
         image: db
         networks:
           - app-network
-            
+           
+           
 networks:
     app-network:
