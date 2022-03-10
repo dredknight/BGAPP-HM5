@@ -2,16 +2,16 @@ version: "3.8"
 services:
     web:
         build:
-           context: .
-           dockerfile: Dockerfile.web
+          context: .
+          dockerfile: Dockerfile.web
         ports:
-           - 8080:80
+          - 8080:80
         volumes:
-           - "${PROJECT_ROOT}:/var/www/html:ro"
-         networks:
-           - app-network
-         depends_on:
-           - db
+          - "${PROJECT_ROOT}:/var/www/html:ro"
+        networks:
+          - app-network
+        depends_on:
+          - db
         image: web
         entrypoint: ["./web-ngnix.sh"]
     db:
@@ -24,7 +24,7 @@ services:
           MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
         image: db
         networks:
-            - app-network
+          - app-network
             
 networks:
     app-network:
