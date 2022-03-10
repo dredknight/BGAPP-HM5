@@ -1,7 +1,7 @@
 version: "3.8"
 services:
     web:
-        image: dredknight/M5web
+        image: dredknight/m5web
         ports:
           - 80:80
         volumes:
@@ -11,7 +11,7 @@ services:
         depends_on:
           - db
     db:
-        image: dredknight/M5db
+        image: dredknight/m5db
         networks:
           - app-network
         environment:
