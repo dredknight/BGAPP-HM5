@@ -1,1 +1,1 @@
-BGAPP
+BGAPP v1.2
